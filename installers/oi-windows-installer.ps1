@@ -11,7 +11,7 @@ if (!(Get-Command $pyenvBin -ErrorAction SilentlyContinue)) {
     $pyenvInstaller = "install-pyenv-win.ps1"
     $pyenvInstallUrl = "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1"
     Invoke-WebRequest -Uri $pyenvInstallUrl -OutFile $pyenvInstaller
-    & powershell -ExecutionPolicy Bypass -File $pyenvInstaller
+    . .\$pyenvInstaller
     Remove-Item -Path $pyenvInstaller
 }
 
